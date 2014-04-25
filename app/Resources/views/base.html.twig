@@ -1,13 +1,102 @@
 <!DOCTYPE html>
 <html>
     <head>
+      {% block metas %}
         <meta charset="UTF-8" />
+      {% endblock %}
         <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+      {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+      {% block body %}
+        {% block nav %}
+        <!-- Nav Bar -->
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="nav-bar right">
+             <ul class="button-group">
+               <li><a href="#" class="button">Home</a></li>
+               <li><a href="#" class="button">Contacto</a></li>
+            </ul>
+            </div>
+            <h1><img src="http://placehold.it/520x80&text=cabecera"></h1>
+            <hr />
+          </div>
+        </div>
+
+        <!-- End Nav -->
+        {% endblock %}
+
+        {% block pageContent %}
+        <!-- Main Page Content and Sidebar -->
+
+        <div class="row">
+          {% block bodyContent%}
+  
+          <!-- Main Blog Content -->
+          <div class="large-9 columns" role="content">
+            <article>
+              <img src="http://placehold.it/720x100&text=elemento">
+            </article>
+
+            <hr />
+            <article>
+              <img src="http://placehold.it/720x100&text=elemento">
+            </article>
+
+            <hr />
+            <article>
+              <img src="http://placehold.it/720x100&text=elemento">
+            </article>
+
+          </div>
+
+          <!-- End Main Content -->
+          {% endblock %}
+
+          {% block sidebar %}
+          <!-- Sidebar -->
+
+          <aside class="large-3 columns">
+
+            <h5>Categories</h5>
+            <ul class="side-nav">
+              <li><a href="#">menu 1</a></li>
+              <li><a href="#">menu 2</a></li>
+              <li><a href="#">menu 3</a></li>
+              <li><a href="#">...</a></li>
+            </ul>
+
+            <div class="panel">
+              <h5>Panel</h5>
+              <p><img src="http://placehold.it/220x200&text=panel"></p>
+            </div>
+
+          </aside>
+
+          <!-- End Sidebar -->
+          {% endblock %}
+        </div>
+        {% endblock %}
+
+        <!-- End Main Content and Sidebar -->
+
+        {% block footer%}
+        <!-- Footer -->
+
+        <footer class="row">
+          <div class="large-12 columns">
+            <hr />
+            <div class="row">
+                <img src="http://placehold.it/920x100&text=pie">
+            </div>
+          </div>
+        </footer>
+        {% endblock %}
+      {% endblock %}
+      {% block javascripts %}
+        <script src="{{ asset('extern/jquery/jquery.min.js') }}"></script>
+      {% endblock %}
     </body>
 </html>

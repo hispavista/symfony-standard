@@ -1,0 +1,8 @@
+hispavista_web:
+    resource: "@HispavistaWebBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+hispavista_bounces_warnings:
+    resource: "@HispavistaBouncesBundle/Resources/config/routing.yml"
+
+

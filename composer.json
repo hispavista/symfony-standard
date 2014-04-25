@@ -4,7 +4,15 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-0": { 
+            "": "src/",
+            "Hispavista\\GeoLocalizationBundle": "../nfs/symfony-bundles",
+            "Hispavista\\BouncesBundle": "../nfs/symfony-bundles",
+            "Hispavista\\OfertasSoapClientBundle": "../nfs/symfony-bundles",
+            "Hispavista\\ContactFormBundle": "../nfs/symfony-bundles",
+            "Hispavista\\TwigExtensionBundle": "../nfs/symfony-bundles",
+            "Hispavista\\CronSpyBundle": "../nfs/symfony-bundles"
+        }
     },
     "require": {
         "php": ">=5.3.3",
@@ -18,7 +26,9 @@
         "sensio/distribution-bundle": "2.3.*",
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "genemu/form-bundle": "2.2.*",
+        "components/jquery": ">=1.9.0"
     },
     "scripts": {
         "post-install-cmd": [
@@ -37,7 +47,8 @@
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "component-dir": "web/extern"
     },
     "minimum-stability": "stable",
     "extra": {
@@ -48,6 +59,7 @@
         },
         "branch-alias": {
             "dev-master": "2.3-dev"
-        }
+        },
+	"symfony-assets-install": "symlink"
     }
 }

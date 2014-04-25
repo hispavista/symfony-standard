@@ -16,6 +16,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Hispavista\BouncesBundle\HispavistaBouncesBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new Hispavista\ContactFormBundle\HispavistaContactFormBundle(),
+            new Hispavista\WebBundle\HispavistaWebBundle(),
+            new Hispavista\TwigExtensionBundle\HispavistaTwigExtensionBundle(),
+            new Hispavista\CronSpyBundle\HispavistaCronSpyBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

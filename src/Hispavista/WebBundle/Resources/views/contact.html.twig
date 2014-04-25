@@ -1,0 +1,30 @@
+{% extends "HispavistaWebBundle:Default:index.html.twig" %}
+        {% block stylesheets %}
+            {{ parent() }}
+            {{ form_stylesheet(form) }}
+        {% endblock %}
+
+        {% block bodyContent %}
+            <div class="large-9 columns" role="content">
+            {% if app.session.getFlashBag.has('contact-form-response') %}
+                    {% set response=app.session.getFlashBag.get('contact-form-response')%}
+                    {% if response[0]=='OK' %}
+                            <div class="large-12 columns">
+                                    <p class="success">Formulario enviado con éxito</p>
+                            </div>
+                    {% elseif response[0]=='KO' %}
+                            <div class="large-12 columns">
+                                    <p class="error">Error al enviar el formulario</p>
+                            </div>
+                    {% endif %}
+            {% endif %}
+
+
+            {{ include('HispavistaContactFormBundle::_contactForm.html.twig', { 'form': form}) }}
+            </div>
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ parent() }}
+            {{ form_javascript(form) }}
+        {% endblock %}

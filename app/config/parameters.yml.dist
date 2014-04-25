@@ -13,3 +13,9 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    hispavista_service_name:    servicio
+    contact_subject:            Contacto desde servicio.hispavista.com
+    service_noreply_mail:       noreply@servicio.hispavista.com
+    service_admin_mail:         servicio@corp.hispavista.com
+    bounces-return-path:        servicio-bounce@b.hispavista.com
