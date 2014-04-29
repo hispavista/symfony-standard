@@ -2,7 +2,7 @@ parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
     database_port:     ~
-    database_name:     symfony
+    database_name:     #servicio#
     database_user:     root
     database_password: ~
 
@@ -14,13 +14,13 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    hispavista_service_name:    servicio
-    contact_subject:            Contacto desde servicio.hispavista.com
-    service_noreply_mail:       noreply@servicio.hispavista.com
-    service_admin_mail:         servicio@corp.hispavista.com
+    hispavista_service_name:    #servicio#
+    contact_subject:            Contacto desde #servicio#.hispavista.com
+    service_noreply_mail:       noreply@#servicio#.hispavista.com
+    service_admin_mail:         #servicio#@corp.hispavista.com
 
-    bounces-return-path:    servicio-bounce@b.hispavista.com
-    bounces-user:           bounces-servicio
+    bounces-return-path:    #servicio#-bounce@b.hispavista.com
+    bounces-user:           bounces-#servicio#
     bounces-password:       password
     bounces-num-messages:   0
     bounces-delete:         1
