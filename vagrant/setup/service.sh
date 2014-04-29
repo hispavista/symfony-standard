@@ -38,6 +38,7 @@ cd /home/servicio
 composer update --no-interaction
 php app/console doctrine:database:create  
 php app/console doctrine:schema:create 
+php app/console fos:user:create admin admin@email.com admin --super-admin
 
 /etc/init.d/apache2 restart
 

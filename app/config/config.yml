@@ -75,3 +75,16 @@ hispavista_bounces:
 
 hispavista_cron_spy:
     service: %hispavista_service_name%
+
+fos_user:
+    db_driver: orm 
+    firewall_name: main
+    user_class: Hispavista\WebBundle\Entity\User
+    
+admingenerator_generator:
+    use_doctrine_orm:     true
+    dashboard_welcome_path: hispavista_web_admin
+    login_path: fos_user_security_login
+    logout_path: fos_user_security_logout
+    exit_path: fos_user_security_logout
+    base_admin_template: HispavistaWebBundle:Admin:base.html.twig

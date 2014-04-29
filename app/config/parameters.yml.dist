@@ -18,4 +18,10 @@ parameters:
     contact_subject:            Contacto desde servicio.hispavista.com
     service_noreply_mail:       noreply@servicio.hispavista.com
     service_admin_mail:         servicio@corp.hispavista.com
-    bounces-return-path:        servicio-bounce@b.hispavista.com
+
+    bounces-return-path:    servicio-bounce@b.hispavista.com
+    bounces-user:           bounces-servicio
+    bounces-password:       password
+    bounces-num-messages:   0
+    bounces-delete:         1
+    bounces-debug:          0

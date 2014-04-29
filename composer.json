@@ -28,7 +28,9 @@
         "sensio/generator-bundle": "2.3.*",
         "incenteev/composer-parameter-handler": "~2.0",
         "genemu/form-bundle": "2.2.*",
-        "components/jquery": ">=1.9.0"
+        "components/jquery": ">=1.9.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

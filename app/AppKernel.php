@@ -22,7 +22,10 @@ class AppKernel extends Kernel
             new Hispavista\WebBundle\HispavistaWebBundle(),
             new Hispavista\TwigExtensionBundle\HispavistaTwigExtensionBundle(),
             new Hispavista\CronSpyBundle\HispavistaCronSpyBundle(),
-
+            new FOS\UserBundle\FOSUserBundle(),
+            new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

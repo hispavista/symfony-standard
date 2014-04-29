@@ -8,3 +8,14 @@ hispavista_web_contact:
     
 genemu_base64:
     resource: "@GenemuFormBundle/Resources/config/routing/base64.xml"
+
+#admin    
+hispavista_web_admin:
+    pattern:  /admin
+    defaults: { _controller: HispavistaWebBundle:Admin:index }
+
+HispavistaWebBundle_admin_hispavista_web_bundle_User:
+    resource: "@HispavistaWebBundle/Controller/User/"
+    type:     admingenerator
+    prefix:   /admin/User
+
