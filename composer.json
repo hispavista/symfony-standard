@@ -47,8 +47,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
-        "post-create-project-cmd": [
-            "sh vagrant/preVagrantUp.sh"
+        "post-root-package-install": [
+            "sh vagrant/preVagrantUp.sh",
+            "sed -i \"s/\\#servicio\\#/${PWD##*/}/g\" app/config/parameters.yml.dist"
         ]
     },
     "config": {
