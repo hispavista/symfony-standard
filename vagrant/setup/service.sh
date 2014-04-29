@@ -1,17 +1,17 @@
 apt-get  install -y php5-cli curl git php5-gd php5-memcache mysql-server
 
 echo Crear carpeta www/logs  y cache
-mkdir /home/servicio/app/cache
-mkdir /home/servicio/www/logs
-chmod 777 /home/servicio/app/cache
-chmod 777 /home/servicio/www/logs
+mkdir /home/#servicio#/app/cache
+mkdir /home/#servicio#/www/logs
+chmod 777 /home/#servicio#/app/cache
+chmod 777 /home/#servicio#/www/logs
 
 
 
 echo Linkar las configuraciones de apache del servicio
 cd /etc/apache2/sites-enabled
-cp /vagrant/setup/service-resources/site.conf /etc/apache2/sites-available/servicio
-ln -s /etc/apache2/sites-available/servicio /etc/apache2/sites-enabled/001-servicio
+cp /vagrant/setup/service-resources/site.conf /etc/apache2/sites-available/#servicio#
+ln -s /etc/apache2/sites-available/#servicio# /etc/apache2/sites-enabled/001-#servicio#
 rm /etc/apache2/sites-enabled/000-default
 
 #Include "conf/sites-enabled/"
@@ -34,7 +34,7 @@ echo "Instalar composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
 echo "composer update"
-cd /home/servicio
+cd /home/#servicio#
 composer update --no-interaction
 php app/console doctrine:database:create  
 php app/console doctrine:schema:create 
