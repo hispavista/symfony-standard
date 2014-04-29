@@ -37,9 +37,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #  vb.gui = true
   #
   #   # Use VBoxManage to customize the VM. For example to change memory:
-    vb.name = "symfony-standard"
+    vb.name = "#servicio#"
     vb.customize ["modifyvm", :id, "--memory", "1024"]
-    #vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate//home/#servicio#", "1"]
+    vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate//home/#servicio#", "1"]
   end
   #
   # View the documentation for the provider you're using for more
