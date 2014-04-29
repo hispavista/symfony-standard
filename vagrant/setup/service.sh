@@ -2,7 +2,7 @@ apt-get  install -y php5-cli curl git php5-gd php5-memcache mysql-server
 
 echo Crear carpeta www/logs  y cache
 mkdir /home/#servicio#/app/cache
-mkdir /home/#servicio#/www/logs
+mkdir -p /home/#servicio#/www/logs
 chmod 777 /home/#servicio#/app/cache
 chmod 777 /home/#servicio#/www/logs
 
@@ -15,7 +15,7 @@ ln -s /etc/apache2/sites-available/#servicio# /etc/apache2/sites-enabled/001-#se
 rm /etc/apache2/sites-enabled/000-default
 
 #Include "conf/sites-enabled/"
-echo Activando módulos
+echo "Activando módulos"
 a2enmod rewrite
 a2enmod headers
 
