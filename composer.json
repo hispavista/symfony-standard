@@ -30,7 +30,7 @@
         "genemu/form-bundle": "2.2.*",
         "components/jquery": ">=1.9.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
-        "cedriclombardot/admingenerator-generator-bundle": "2.3.*@dev"
+        "cedriclombardot/admingenerator-generator-bundle": "1.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [
