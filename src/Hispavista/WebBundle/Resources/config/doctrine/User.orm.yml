@@ -1,8 +1,9 @@
 Hispavista\WebBundle\Entity\User:
     type:  entity
     table: User
-    id:
+    fields:
         id:
             type: integer
+            id: true
             generator:
                 strategy: AUTO
