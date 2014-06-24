@@ -1,5 +1,6 @@
 parameters:
-#    hispavista_web.example.class: Hispavista\WebBundle\Example
+    hispavista_web.data_dir: %kernel.root_dir%/../datos
+    hispavista_web.temp_dir: %kernel.root_dir%/../temp
 
 services:
     hispavista_twig_extension.twig.cookie_js_extension:
