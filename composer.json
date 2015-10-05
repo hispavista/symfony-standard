@@ -6,12 +6,12 @@
     "autoload": {
         "psr-4": { 
             "": "src/", 
-            "Hispavista\\GeoLocalizationBundle": "../nfs/symfony-bundles",
-            "Hispavista\\BouncesBundle": "../nfs/symfony-bundles",
-            "Hispavista\\OfertasSoapClientBundle": "../nfs/symfony-bundles",
-            "Hispavista\\ContactFormBundle": "../nfs/symfony-bundles",
-            "Hispavista\\TwigExtensionBundle": "../nfs/symfony-bundles",
-            "Hispavista\\CronSpyBundle": "../nfs/symfony-bundles"
+            "Hispavista\\GeoLocalizationBundle\\": "../nfs/symfony-bundles",
+            "Hispavista\\BouncesBundle\\": "../nfs/symfony-bundles",
+            "Hispavista\\OfertasSoapClientBundle\\": "../nfs/symfony-bundles",
+            "Hispavista\\ContactFormBundle\\": "../nfs/symfony-bundles",
+            "Hispavista\\TwigExtensionBundle\\": "../nfs/symfony-bundles",
+            "Hispavista\\CronSpyBundle\\": "../nfs/symfony-bundles"
         }
     },
     "require": {
