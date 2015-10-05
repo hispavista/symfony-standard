@@ -1,0 +1,50 @@
+generator: admingenerator.generator.doctrine
+params:
+    model: Hispavista\WebBundle\Entity\User
+    namespace_prefix: Hispavista
+    concurrency_lock: ~
+    bundle_name: WebBundle
+    pk_requirement: ~
+    fields: ~
+    object_actions:
+        delete: ~
+    batch_actions:
+        delete: ~
+builders:
+    list:
+        params:
+            title: Lista de Usuarios
+            display: [id,username,email,enabled,locked,roles]
+            actions:
+                new: ~
+            object_actions:
+                edit: ~
+                delete: ~
+    excel:
+        params: ~
+        filename: ~
+        filetype: ~
+    filters:
+        params:
+            display: [id,username,email,enabled,locked]
+    new:
+        params:
+            title: Nuevo usuario
+            display: [username,email,password,enabled]
+            actions:
+                save: ~
+                list: ~
+    edit:
+        params:
+            title: "Editando \"%object%\"|{ %object%: User.username }|"
+            display: [username,email,enabled,locked]
+            actions:
+                save: ~
+                list: ~
+    actions:
+        params:
+            object_actions:
+                delete: ~
+                edit: ~ 
+            batch_actions:
+                delete: ~

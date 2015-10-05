@@ -16,7 +16,15 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new AppBundle\AppBundle(),
+            new Genemu\Bundle\FormBundle\GenemuFormBundle(),
+            new Hispavista\ContactFormBundle\HispavistaContactFormBundle(),
+            new Hispavista\WebBundle\HispavistaWebBundle(),
+            new Hispavista\TwigExtensionBundle\HispavistaTwigExtensionBundle(),
+            new Hispavista\CronSpyBundle\HispavistaCronSpyBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Admingenerator\GeneratorBundle\AdmingeneratorGeneratorBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -32,5 +40,10 @@ class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load($this->getRootDir().'/config/config_'.$this->getEnvironment().'.yml');
+    }
+    
+    public function getLogDir()
+    {
+        return $this->rootDir.'/../www/logs';
     }
 }

@@ -1,0 +1,16 @@
+parameters:
+    hispavista_web.data_dir: %kernel.root_dir%/../datos
+    hispavista_web.temp_dir: %kernel.root_dir%/../temp
+
+services:
+    hispavista_twig_extension.twig.cookie_js_extension:
+        class: Hispavista\TwigExtensionBundle\Twig\CookieJsExtension
+        arguments: [ '@service_container' ]
+        tags:
+            - {name: twig.extension}
+           
+    hispavista_geo_localization.twig.geo_ip_extension:
+        class: Hispavista\GeoLocalizationBundle\Twig\GeoIpExtension
+        arguments: [ '@service_container' ]
+        tags:
+            - {name: twig.extension}

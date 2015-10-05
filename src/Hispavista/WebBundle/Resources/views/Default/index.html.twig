@@ -1,0 +1,35 @@
+{% extends "::base.html.twig" %}
+      {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/hispavistaweb/css/base.css')}}" type="text/css" media="all" />
+      {% endblock %}
+
+      {% block nav %}
+        <!-- Nav Bar -->
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="nav-bar right">
+             <ul class="button-group">
+               <li><a href="{{ path('hispavista_web_homepage') }}" class="button">Home</a></li>
+               <li><a href="{{ path('hispavista_web_contact') }}" class="button">Contacto</a></li>
+            </ul>
+            </div>
+            <h1><img src="http://placehold.it/720x80&text=cabecera"></h1>
+            <hr />
+          </div>
+        </div>
+
+        <!-- End Nav -->
+      {% endblock %}
+      
+      {% block bodyContent %}
+        <div class="large-9 columns" role="content">
+            Codigo de pais del usuario: {{''|paisGeoIp}}<br/>
+        </div>
+        {{parent()}}
+      {% endblock %}
+      
+      {% block footer %}
+        {{ parent() }}
+        {{ '' | cookieJs | raw }}
+      {% endblock %}  
+        

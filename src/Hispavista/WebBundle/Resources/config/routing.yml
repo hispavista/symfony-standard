@@ -1,0 +1,21 @@
+hispavista_web_homepage:
+    pattern:  /
+    defaults: { _controller: HispavistaWebBundle:Default:index }
+
+hispavista_web_contact:
+    pattern:  /contacto
+    defaults: { _controller: HispavistaWebBundle:Contact:index }
+    
+genemu_base64:
+    resource: "@GenemuFormBundle/Resources/config/routing/base64.xml"
+
+#admin    
+hispavista_web_admin:
+    pattern:  /admin
+    defaults: { _controller: HispavistaWebBundle:Admin:index }
+
+HispavistaWebBundle_admin_hispavista_web_bundle_User:
+    resource: "@HispavistaWebBundle/Controller/User/"
+    type:     admingenerator
+    prefix:   /admin/User
+

@@ -4,7 +4,15 @@
     "type": "project",
     "description": "The \"Symfony Standard Edition\" distribution",
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-4": { 
+            "": "src/", 
+            "Hispavista\\GeoLocalizationBundle": "../nfs/symfony-bundles",
+            "Hispavista\\BouncesBundle": "../nfs/symfony-bundles",
+            "Hispavista\\OfertasSoapClientBundle": "../nfs/symfony-bundles",
+            "Hispavista\\ContactFormBundle": "../nfs/symfony-bundles",
+            "Hispavista\\TwigExtensionBundle": "../nfs/symfony-bundles",
+            "Hispavista\\CronSpyBundle": "../nfs/symfony-bundles"
+        }
     },
     "require": {
         "php": ">=5.3.9",
@@ -16,7 +24,11 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~4.0",
         "sensio/framework-extra-bundle": "^3.0.2",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+        "genemu/form-bundle": "2.2.*",
+        "components/jquery": ">=1.9.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "cedriclombardot/admingenerator-generator-bundle": "1.2.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -37,10 +49,15 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-root-package-install": [
+            "sh vagrant/preVagrantUp.sh",
+            "sed -i \"s/\\#servicio\\#/${PWD##*/}/g\" app/config/parameters.yml.dist"
         ]
     },
     "config": {
-        "bin-dir": "bin"
+        "bin-dir": "bin",
+        "component-dir": "web/extern"
     },
     "extra": {
         "symfony-app-dir": "app",
@@ -51,6 +68,7 @@
         },
         "branch-alias": {
             "dev-master": "2.7-dev"
-        }
+        },
+        "symfony-assets-install": "symlink"
     }
 }
