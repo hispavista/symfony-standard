@@ -6,11 +6,11 @@ VAGRANTFILE_API_VERSION = "2"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "debian-wheezy"
+  config.vm.box = "debian-jessy"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  config.vm.box_url = "http://wiki.hispavistaroot.local/images/debian-wheezy.box"
+  config.vm.box_url = "http://wiki.hispavistaroot.local/images/debian-jessie.box"
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -25,7 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder "../", "/home/#servicio#", :nfs => false, group: "www-data", :mount_options => ['dmode=775', 'fmode=664']
+  config.vm.synced_folder "../", "/home/#servicio#", :nfs => true
   #config.sh.after_share_folders = "sudo mount -t vboxsf -o uid=`id -u #servicio#`,gid=`id -g www-data`,dmode=775,fmode=664 /home/#servicio# /home/#servicio#"
 
   # Provider-specific configuration so you can fine-tune various
