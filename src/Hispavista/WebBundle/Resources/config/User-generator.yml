@@ -14,19 +14,14 @@ builders:
     list:
         params:
             title: Lista de Usuarios
-            display: [id,username,email,enabled,locked,roles]
+            display: [id,username,email,enabled,locked]
             actions:
                 new: ~
             object_actions:
                 edit: ~
                 delete: ~
-    excel:
-        params: ~
-        filename: ~
-        filetype: ~
-    filters:
-        params:
-            display: [id,username,email,enabled,locked]
+            filters: [username, email]
+        
     new:
         params:
             title: Nuevo usuario
@@ -45,6 +40,9 @@ builders:
         params:
             object_actions:
                 delete: ~
-                edit: ~ 
+                edit: ~
             batch_actions:
                 delete: ~
+    filtersMode: top
+        
+    
