@@ -1,31 +1,8 @@
-{% extends('AdmingeneratorGeneratorBundle::base_admin_assetic_less.html.twig') %}
+{% extends('AdmingeneratorGeneratorBundle::base_uncompressed.html.twig') %}
 
-    {% block scripts_head %}
-        <script type="text/javascript" src="{{ asset('extern/jquery/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('extern/jquery-ui/ui/minified/jquery-ui.min.js') }}"></script>
-        <!--[if lt IE 9]>
-            <script src="{{ asset('extern/html5shiv/dist/html5shiv.js') }}"></script>
-        <![endif]-->
-    {% endblock %}
-
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('extern/bootstrap/css/bootstrap.min.css') }}" type="text/css" media="all" />
-        <link rel="stylesheet" href="{{ asset('extern/bootstrap/css/bootstrap-responsive.min.css') }}" type="text/css" media="all" />
-        <link rel="stylesheet" href="{{ asset('extern/font-awesome/css/font-awesome.min.css') }}" type="text/css" media="all" />
-        <!--[if lt IE 7]>
-            <link rel="stylesheet" href="{{ asset('extern/font-awesome/css/font-awesome-ie7.min') }}" type="text/css" media="all" />
-        <![endif]-->
-        <link rel="stylesheet" href="{{ asset('bundles/admingeneratorgenerator/css/general.css') }}" type="text/css" media="all" />
-        <link rel="stylesheet" href="{{ asset('bundles/admingeneratorgenerator/css/profile.css') }}" type="text/css" media="all" />
-        <link rel="stylesheet" href="{{ asset('bundles/admingeneratorgenerator/css/nested-list.css') }}" type="text/css" media="all" />
-        <link rel="stylesheet" href="{{ asset('bundles/admingeneratorgenerator/css/bootstrap-extended.css') }}" type="text/css" media="all" />
-    {% endblock %}
+    {% block sidebar %}
+    <aside class="main-sidebar sidebar-offcanvas">
+        {% include "HispavistaWebBundle:Admin:layout.html.twig" %}
+    </aside>
+    {% endblock sidebar %}
         
-    {% block navbar %}
-        {% include 'HispavistaWebBundle:Admin:admin_navbar.html.twig' %}
-    {% endblock navbar %}
-        
-    {% block javascripts %}
-        <script type="text/javascript" src="{{ asset('extern/bootstrap/js/bootstrap.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('bundles/admingeneratorgenerator/js/admingenerator/general.js') }}"></script>
-    {% endblock %}

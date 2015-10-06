@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -71,6 +71,7 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -78,3 +79,31 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+hispavista_contact_form:
+    subject: "%contact_subject%"
+    from: "%service_noreply_mail%"
+    to: "%service_admin_mail%"
+
+hispavista_bounces:
+    return_path: %bounces-return-path%
+
+hispavista_cron_spy:
+    service: %hispavista_service_name%
+
+fos_user:
+    db_driver: orm 
+    firewall_name: main
+    user_class: Hispavista\WebBundle\Entity\User
+    
+admingenerator_generator:
+    use_doctrine_orm:     true
+    dashboard_route: hispavista_web_admin
+    login_route: fos_user_security_login
+    logout_route: fos_user_security_logout
+    exit_route: fos_user_security_logout
+    base_admin_template: HispavistaWebBundle:Admin:base.html.twig
+    
+jms_security_extra:
+    # Enables expression language
+    expressions: true

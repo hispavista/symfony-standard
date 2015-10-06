@@ -11,8 +11,9 @@ chmod 777 /home/#servicio#/www/logs
 echo Linkar las configuraciones de apache del servicio
 cd /etc/apache2/sites-enabled
 cp /vagrant/setup/service-resources/site.conf /etc/apache2/sites-available/#servicio#
-ln -s /etc/apache2/sites-available/#servicio# /etc/apache2/sites-enabled/001-#servicio#
-rm /etc/apache2/sites-enabled/000-default
+cp /vagrant/setup/service-resources/dir.conf /etc/apache2/mods-available/dir.conf
+ln -s /etc/apache2/sites-available/#servicio# /etc/apache2/sites-enabled/001-#servicio#.conf
+rm /etc/apache2/sites-enabled/000-default.conf
 
 #Include "conf/sites-enabled/"
 echo "Activando módulos"
@@ -39,6 +40,8 @@ composer update --no-interaction
 php app/console doctrine:database:create  
 php app/console doctrine:schema:create 
 php app/console fos:user:create admin admin@email.com admin --super-admin
+#Este comando no puede ser ejecutado por root
+php app/console admin:assets-install 
 
 /etc/init.d/apache2 restart
 

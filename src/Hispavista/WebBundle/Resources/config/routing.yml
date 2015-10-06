@@ -11,7 +11,7 @@ genemu_base64:
 
 #admin    
 hispavista_web_admin:
-    pattern:  /admin
+    pattern:  /admin/home
     defaults: { _controller: HispavistaWebBundle:Admin:index }
 
 HispavistaWebBundle_admin_hispavista_web_bundle_User:

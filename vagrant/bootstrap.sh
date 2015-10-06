@@ -5,5 +5,6 @@ apt-get update
 sh /vagrant/setup/des5.sh
 sh /vagrant/setup/postfix.sh
 sh /vagrant/setup/apache.sh
+sh /vagrant/setup/nodejs-bower.sh
 sh /vagrant/setup/service.sh
 sh /vagrant/setup/bounces.sh

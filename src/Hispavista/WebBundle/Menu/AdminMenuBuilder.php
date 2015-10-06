@@ -11,18 +11,19 @@ namespace Hispavista\WebBundle\Menu;
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-class AdminMenuBuilder extends ContainerAware{
-    
-    public function mainMenu(FactoryInterface $factory, array $options)
-    {
+class AdminMenuBuilder extends ContainerAware {
+
+    public function mainMenu(FactoryInterface $factory, array $options) {
         // create root item
         $menu = $factory->createItem('root');
         // set id for root item, and class for nice twitter bootstrap style
-        $menu->setChildrenAttributes(array('id' => 'main_navigation', 'class' => 'nav navbar-nav'));
+        $menu->setChildrenAttributes(array('id' => 'main_navigation', 'class' => 'sidebar-menu'));
 
         // add links $menu
-        $menu->addChild('Usuarios', array('route'=>'Hispavista_WebBundle_User_list'));
+        $menu->addChild('Usuarios', array('route' => 'Hispavista_WebBundle_User_list'))->setExtra('icon', 'fa  fa-user');
+        ;
 
         return $menu;
     }
+
 }
