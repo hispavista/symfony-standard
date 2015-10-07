@@ -20,28 +20,17 @@ echo "Activando módulos"
 a2enmod rewrite
 a2enmod headers
 
-
-#echo "Montando la carpeta datos"
-#echo "Creando enlance simbólico en /home/globedia2014/datos a /mnt/globedia2014_srv/globedia2014/datos"
-#if [ -d /home/globedia2014/datos/ ] 
-#then
-#        echo El directorio existe
-#else
-#        ln -s /mnt/globedia2014_srv/globedia2014/datos /home/globedia2014/datos
-#fi
-
+echo "Creamos la bbdd"
+mysql -u root -e  "create database prueba"
 
 echo "Instalar composer"
 curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 
-echo "composer update"
+echo "composer install"
 cd /home/#servicio#
-composer update --no-interaction
-php app/console doctrine:database:create  
+composer install --no-interaction
 php app/console doctrine:schema:create 
 php app/console fos:user:create admin admin@email.com admin --super-admin
-#Este comando no puede ser ejecutado por root
-php app/console admin:assets-install 
 
 /etc/init.d/apache2 restart
 
