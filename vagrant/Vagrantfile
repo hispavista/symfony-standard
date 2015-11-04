@@ -44,5 +44,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # View the documentation for the provider you're using for more
   # information on available options.
   config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.provision :inline  "php app/console admin:assets-install" privileged: false
+  config.vm.provision :shell, inline: "cd /home/#servicio#/ && php app/console admin:assets-install", privileged: false
 end
